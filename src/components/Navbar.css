@@ -1,0 +1,53 @@
+/* src/components/Navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0071ce; /* Walmart's primary blue color */
+  padding: 10px 20px;
+  color: white;
+  font-style: normal;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  width: 120px;
+  background-image: url("walmart.png"); /* Adjust as needed for logo size */
+}
+
+.navbar-links {
+  display: flex;
+  gap: 15px; /* Space between links */
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-link:hover {
+  background-color: #005bb5; /* Darker blue for hover effect */
+  text-decoration: none;
+  color: gold;
+}
+
+.navbar-link.active {
+  background-color: #005bb5; /* Darker blue for active state */
+  font-weight: bold;
+}
+
+.navbar-logo img {
+  height: 50px; /* Adjust the height of the logo as needed */
+  max-width: 100%;
+  object-fit: contain;
+}

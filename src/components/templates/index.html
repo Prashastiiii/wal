@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Detection</title>
+    <style>
+      #video {
+        width: 80%;
+        height: 300px;
+        margin: auto;
+        display: block;
+        border: 1px solid black;
+      }
+      .controls {
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Object Detection</h1>
+    <div class="controls">
+      <button onclick="startDetection()">Start Detection</button>
+      <button onclick="endDetection()">End Detection</button>
+    </div>
+    <div>
+      <img id="video" src="" alt="Video Stream" />
+    </div>
+
+    <script>
+      function startDetection() {
+        fetch("/start_detection", { method: "POST" })
+          .then((response) => {
+            if (response.ok) {
+              document.getElementById("video").src = "/video_feed";
+              console.log("Detection started.");
+            } else {
+              console.error("Error starting detection:", response.status);
+            }
+          })
+          .catch((error) => console.error("Error starting detection:", error));
+      }
+
+      function endDetection() {
+        fetch("/end_detection", { method: "POST" })
+          .then((response) => {
+            if (response.ok) {
+              document.getElementById("video").src = "";
+              console.log("Detection ended.");
+            } else {
+              console.error("Error ending detection:", response.status);
+            }
+          })
+          .catch((error) => console.error("Error ending detection:", error));
+      }
+    </script>
+  </body>
+</html>

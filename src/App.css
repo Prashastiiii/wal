@@ -1,0 +1,60 @@
+:root {
+ --mainBlue:#2a2a72;
+ --lightBlue:#009ffd;
+ --mainWhite:#f3f3f3;
+ --mainDark:#232528;
+ --mainYellow:#ffa400;
+}
+body{
+  font-family:"Anton", sans-serif !important;
+  background:var(--mainWhite) !important;
+  color:var(--mainDark) !important;
+}
+.text-title{
+  font-family: 'Anton', cursive;
+  letter-spacing:0.3rem;
+  text-transform: uppercase; 
+}
+.text-blue{
+  color:var(--mainBlue);
+}
+.text-bright{
+  color:var(--lightBlue);
+}
+.btn-black{
+  background:transparent;
+  text-transform:capitalize;
+  font-size:0.8rem !important;
+  color:var(--mainDark);
+  border-radius: 0 !important;
+  border:0.1rem solid var(--mainDark) !important;
+}
+.btn-black:hover{
+  background:var(--mainDark) !important;
+  color:var(--mainWhite) !important;
+}
+.cart-icon{
+  cursor:pointer;
+  font-size:1.2rem;
+  color:var(--mainYellow);
+}
+
+/* App.css */
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust minmax values as needed */
+  gap: 20px; /* Space between items */
+  padding: 20px;
+}
+
+.product {
+  background-color: #f8f9fa; /* Example background color */
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  height: 300px; /* Fixed height for uniformity */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out content evenly */
+}
